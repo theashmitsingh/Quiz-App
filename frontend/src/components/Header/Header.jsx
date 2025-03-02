@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return (
     <header className="">
-      <div className="container mx-auto flex justify-between items-center p-4">
+      <div className=" flex justify-between items-center p-4 border-b-2 border-cyan-100">
         {/* Logo on the left */}
-        <div className="text-2xl font-bold">EduQuizAI</div>
+        <div className="text-2xl font-bold ml-15">EduQuizAI</div>
 
         {/* Nav links in the center */}
         <nav className="absolute left-1/2 transform -translate-x-1/2">
@@ -20,7 +20,7 @@ const Header = () => {
 
         {/* Login button on the right */}
         <div>
-          <Link to="/login" className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg">
+          <Link to="/login" className="bg-blue-600 hover:bg-blue-700 mr-15 text-white py-2 px-4 rounded-lg">
             Login
           </Link>
         </div>
