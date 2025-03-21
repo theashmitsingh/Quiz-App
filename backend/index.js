@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const database = require("./config/database");
+const userController = require("./controllers/AuthController");
 database.connect();
 
 const app = express();
@@ -14,7 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const quizRoutes = require("./routes/quizRoutes");
 const chatbotRoutes = require("./routes/chatbotRoutes");
+const UserRoutes = require('./routes/userRoutes');
 
+app.use("/api/v1", UserRoutes);
 app.use("/api/quiz", quizRoutes);
 app.use("/api/chatbot", chatbotRoutes);
 

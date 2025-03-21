@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
+
+  const [token, setToken] = useState(true);
+
   return (
     <header className="">
       <div className=" flex justify-between items-center p-4 border-b-2 border-cyan-100">
@@ -19,11 +22,14 @@ const Header = () => {
         </nav>
 
         {/* Login button on the right */}
-        <div>
+        {
+          token ? <div>
+            
+          </div> :
           <Link to="/login" className="bg-blue-600 hover:bg-blue-700 mr-15 text-white py-2 px-4 rounded-lg">
             Login
           </Link>
-        </div>
+        }
       </div>
     </header>
   )

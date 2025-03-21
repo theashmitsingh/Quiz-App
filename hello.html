@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        async function callme(){
+         const response = await fetch('http://localhost:3000/api/v1/signup', {
+                 method: "POST",
+                 headers: {
+                     'Content-Type': 'application/json'
+                 },
+                 body: JSON.stringify({name:"murshad ali",email:"murshad@gmail.com",password:'12345678'})
+             });
+             const result = await response.json();
+             const { success, message, error } = result;
+             if (success) {
+                 console.log(message);
+                 setTimeout(() => {
+                     navigate('/login');
+                 }, 1000);
+             } else if (error) {
+                 const details = error?.details[0].message;
+                 alert(details);
+             } else if (!success) {
+                 alert(message);
+             }
+             console.log(result);
+    }
+    callme()
+     </script>
+
+
+</body>
+</html>

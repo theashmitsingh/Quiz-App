@@ -8,7 +8,7 @@ const Login = () => {
         <h1 className="text-3xl font-bold text-center mb-2">Welcome Back</h1>
         <p className="text-center text-gray-600 mb-6">Please login to your account.</p>
 
-        <form className="space-y-4">
+        <form action='/signup' className="space-y-4">
           <div>
             <label className="block text-gray-700 mb-1">Email Address:</label>
             <input
