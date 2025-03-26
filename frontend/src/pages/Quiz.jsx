@@ -30,7 +30,7 @@ const Quiz = () => {
           className="h-10 w-[40%] bg-zinc-200 rounded-md pl-5"
           placeholder="Enter text here..."
         />
-        <button className="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-md">
+        <button className="bg-red-600 cursor-pointer hover:bg-red-700 text-white px-3 py-2 rounded-md">
           Generate
         </button>
       </div>

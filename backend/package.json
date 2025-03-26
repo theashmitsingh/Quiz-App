@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "server": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +25,9 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.11.0",
     "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.10.0",
     "pdf-parse": "^1.1.1",
-    "pdf-parser": "^1.0.5"
+    "pdf-parser": "^1.0.5",
+    "transporter": "^0.0.1"
   }
 }

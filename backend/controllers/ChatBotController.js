@@ -3,7 +3,7 @@ const axios = require("axios");
 const MISTRAL_API_KEY = process.env.MISTRAL_API_KEY;
 const MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions";
 
-exports.getResponse = async (req, res) => {
+exports.chatBot = async (req, res) => {
     const { message } = req.body;
 
     if (!message) {
@@ -11,20 +11,31 @@ exports.getResponse = async (req, res) => {
     }
 
     try {
-        const response = await axios.post(MISTRAL_URL, {
-            model: "mistral-tiny",
-            messages: [{ role: "user", content: `Answer this: ${message}` }],
-        }, {
-            headers: {
-                "Authorization": `Bearer ${MISTRAL_API_KEY}`,
-                "Content-Type": "application/json",
-            },
-        });
+        const prompt = `Answer the following question as an AI: ${message}`;
 
-        res.json({ reply: response.data.choices[0].message.content.trim() });
+        // Sending request to Mistral AI API
+        const response = await axios.post(
+            MISTRAL_URL,
+            {
+                model: "mistral-tiny",
+                messages: [{ role: "user", content: prompt }],
+            },
+            {
+                headers: {
+                    "Authorization": `Bearer ${MISTRAL_API_KEY}`,
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+
+        // Extract AI-generated response
+        const aiReply = response.data.choices[0].message.content.trim();
+        console.log(aiReply);
+        // Send response back to frontend
+        res.json({ reply: aiReply });
 
     } catch (error) {
-        console.error("Chatbot error:", error);
+        console.error("Error fetching chatbot response:", error);
         res.status(500).json({ error: "Failed to get response from AI" });
     }
 };

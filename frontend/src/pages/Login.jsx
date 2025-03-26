@@ -37,15 +37,6 @@ const Login = () => {
           </button>
         </form>
 
-        <div className="text-center my-4 text-gray-500">OR</div>
-
-        <div className="flex justify-center space-x-4">
-          <button className="p-2 border rounded-full">G</button>
-          <button className="p-2 border rounded-full">M</button>
-          <button className="p-2 border rounded-full">X</button>
-          <button className="p-2 border rounded-full">L</button>
-        </div>
-
         <p className="text-center mt-4">
           Don't have an account? <Link to="/signup" className="font-bold hover:underline hover:text-blue-500">Sign Up</Link>
         </p>

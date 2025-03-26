@@ -114,21 +114,6 @@ const SignUp = () => {
               <span className="absolute right-3 top-2.5 cursor-pointer">👁️</span>
             </div>
           </div>
-          <div>
-            <label className="block text-gray-700 mb-1">Confirm Password:</label>
-            <div className="relative">
-              <input
-                type="password"
-                placeholder="Confirm Your Password"
-                name="confirmPassword"
-                className="w-full p-2 border rounded-md bg-gray-100 focus:outline-none"
-                onChange={handleChange}
-                value={signupInfo.confirmPassword}
-                required
-              />
-              <span className="absolute right-3 top-2.5 cursor-pointer">👁️</span>
-            </div>
-          </div>
 
           <button
             type="submit"
@@ -137,15 +122,6 @@ const SignUp = () => {
             Sign Up
           </button>
         </form>
-
-        <div className="text-center my-4 text-gray-500">OR</div>
-
-        <div className="flex justify-center space-x-4">
-          <button className="p-2 border rounded-full">G</button>
-          <button className="p-2 border rounded-full">M</button>
-          <button className="p-2 border rounded-full">X</button>
-          <button className="p-2 border rounded-full">L</button>
-        </div>
 
         <p className="text-center mt-4">
           Already have an account? <Link to="/login" className="font-bold hover:underline hover:text-blue-500">Login</Link>
